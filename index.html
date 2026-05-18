@@ -43,6 +43,8 @@ const DATA = {
     phone: "+91 8434574011",
     linkedin_url: "https://www.linkedin.com/in/harshpatel2510",
     linkedin_label: "linkedin.com/in/harshpatel2510",
+    github_url: "https://github.com/rjharshpatel",
+    github_label: "github.com/rjharshpatel",
     location: "Patna, Bihar, India",
   },
 
@@ -64,21 +66,26 @@ const DATA = {
   },
 
   /* ── Projects ── */
-  projects: [
-    {
-      num: "P-01",
-      title: "APK Malware Detection using ML",
-      desc: "Built a machine learning pipeline to detect malicious Android APK files by extracting static features (permissions, API calls, intents) and training classifiers including Random Forest and XGBoost. Achieved high accuracy in distinguishing benign from malware samples, demonstrating practical application of ML in cybersecurity.",
-      tags: [
-        { label: "Machine Learning", style: "ml" },
-        { label: "Python",           style: "py" },
-        { label: "Scikit-learn",     style: "py" },
-        { label: "Pandas",           style: "py" },
-        { label: "XGBoost",          style: "py" },
-        { label: "Feature Engineering", style: "" },
-      ],
-    },
-    {
+projects: [
+  {
+    num: "P-01",
+    title: "APK Shield — Malware Detection using ML",
+    desc: "Developed an ML-powered Android APK malware detection system capable of analyzing permissions, API calls, Activities, Services, Broadcast Receivers, Content Providers and Smali code to classify APKs as benign or malicious. Implemented Random Forest and XGBoost models with feature engineering for accurate cybersecurity threat detection.",
+    
+    tags: [
+      { label: "Machine Learning", style: "ml" },
+      { label: "Python", style: "py" },
+      { label: "Flask", style: "py" },
+      { label: "Scikit-learn", style: "py" },
+      { label: "Pandas", style: "py" },
+      { label: "XGBoost", style: "py" },
+      { label: "Cybersecurity", style: "" },
+      { label: "Feature Engineering", style: "" },
+    ],
+
+    github: "https://github.com/rjharshpatel",
+    live: "https://apk-shield-85v7.onrender.com/"
+  },
       num: "P-02",
       title: "IPL Data Analysis & Insights",
       desc: "Developed an interactive Business Intelligence dashboard to monitor revenue, growth trends, and regional performance across IPL seasons. Designed KPI reports enabling stakeholders to identify top-performing patterns and demand signals, supporting inventory planning and sales optimization decisions.",
@@ -195,7 +202,7 @@ const DATA = {
     school: "Saharsa College of Engineering, Bihar",
     duration: "Aug 2022 – Aug 2026",
     courses: "Data Structures, Databases, Operating Systems, Machine Learning",
-    gpa: "7.79",
+    gpa: "7.96",
   },
 
   /* ── Certificates ── */
