@@ -51,7 +51,7 @@ const DATA = {
   /* ── Hero Stats (4 boxes) ── */
   stats: [
     { num: "4",    label: "Projects" },
-    { num: "7.79", label: "GPA" },
+    { num: "7.96", label: "GPA" },
     { num: "3+",   label: "Certificates" },
     { num: "2026", label: "Graduating" },
   ],
@@ -70,8 +70,9 @@ projects: [
   {
     num: "P-01",
     title: "APK Shield — Malware Detection using ML",
+
     desc: "Developed an ML-powered Android APK malware detection system capable of analyzing permissions, API calls, Activities, Services, Broadcast Receivers, Content Providers and Smali code to classify APKs as benign or malicious. Implemented Random Forest and XGBoost models with feature engineering for accurate cybersecurity threat detection.",
-    
+
     tags: [
       { label: "Machine Learning", style: "ml" },
       { label: "Python", style: "py" },
@@ -86,43 +87,53 @@ projects: [
     github: "https://github.com/rjharshpatel",
     live: "https://apk-shield-85v7.onrender.com/"
   },
-      num: "P-02",
-      title: "IPL Data Analysis & Insights",
-      desc: "Developed an interactive Business Intelligence dashboard to monitor revenue, growth trends, and regional performance across IPL seasons. Designed KPI reports enabling stakeholders to identify top-performing patterns and demand signals, supporting inventory planning and sales optimization decisions.",
-      tags: [
-        { label: "Python",             style: "py" },
-        { label: "Pandas",             style: "py" },
-        { label: "NumPy",              style: "py" },
-        { label: "EDA",                style: "" },
-        { label: "KPI Reporting",      style: "" },
-        { label: "Data Visualization", style: "" },
-      ],
-    },
-    {
-      num: "P-03",
-      title: "Mobile Sales Analytics Dashboard",
-      desc: "Built an interactive Power BI dashboard tracking revenue, growth trends, and regional sales performance in the mobile segment. Enabled drill-down analysis across dimensions to support inventory management and sales optimization for stakeholders.",
-      tags: [
-        { label: "Power BI",       style: "pbi" },
-        { label: "DAX",            style: "pbi" },
-        { label: "Dashboard Design", style: "" },
-        { label: "Trend Analysis", style: "" },
-        { label: "Drill-down",     style: "" },
-      ],
-    },
-    {
-      num: "P-04",
-      title: "SQL Sales Performance Analysis",
-      desc: "Designed complex MySQL queries leveraging joins, subqueries, and aggregations to analyze customer and product-level sales trends. Generated actionable insights for monthly performance tracking and revenue contribution analysis across business segments.",
-      tags: [
-        { label: "MySQL",        style: "sql" },
-        { label: "SQL Joins",    style: "sql" },
-        { label: "Aggregations", style: "sql" },
-        { label: "Subqueries",   style: "" },
-        { label: "Revenue Analysis", style: "" },
-      ],
-    },
-  ],
+
+  {
+    num: "P-02",
+    title: "IPL Data Analysis & Insights",
+
+    desc: "Developed an interactive Business Intelligence dashboard to monitor revenue, growth trends, and regional performance across IPL seasons. Designed KPI reports enabling stakeholders to identify top-performing patterns and demand signals, supporting inventory planning and sales optimization decisions.",
+
+    tags: [
+      { label: "Python", style: "py" },
+      { label: "Pandas", style: "py" },
+      { label: "NumPy", style: "py" },
+      { label: "EDA", style: "" },
+      { label: "KPI Reporting", style: "" },
+      { label: "Data Visualization", style: "" },
+    ],
+  },
+
+  {
+    num: "P-03",
+    title: "Mobile Sales Analytics Dashboard",
+
+    desc: "Built an interactive Power BI dashboard tracking revenue, growth trends, and regional sales performance in the mobile segment. Enabled drill-down analysis across dimensions to support inventory management and sales optimization for stakeholders.",
+
+    tags: [
+      { label: "Power BI", style: "pbi" },
+      { label: "DAX", style: "pbi" },
+      { label: "Dashboard Design", style: "" },
+      { label: "Trend Analysis", style: "" },
+      { label: "Drill-down", style: "" },
+    ],
+  },
+
+  {
+    num: "P-04",
+    title: "SQL Sales Performance Analysis",
+
+    desc: "Designed complex MySQL queries leveraging joins, subqueries, and aggregations to analyze customer and product-level sales trends. Generated actionable insights for monthly performance tracking and revenue contribution analysis across business segments.",
+
+    tags: [
+      { label: "MySQL", style: "sql" },
+      { label: "SQL Joins", style: "sql" },
+      { label: "Aggregations", style: "sql" },
+      { label: "Subqueries", style: "" },
+      { label: "Revenue Analysis", style: "" },
+    ],
+  },
+],
 
   /* ── Skills ── */
   skills: [
@@ -398,10 +409,37 @@ const statsHTML = d.stats.map(s => `
 
 /* CONTACT */
 const contactHTML = `
-  <div class="contact-item"><div class="contact-icon">@</div><a href="mailto:${d.info.email}">${d.info.email}</a></div>
-  <div class="contact-item"><div class="contact-icon">#</div>${d.info.phone}</div>
-  <div class="contact-item"><div class="contact-icon">in</div><a href="${d.info.linkedin_url}" target="_blank">${d.info.linkedin_label}</a></div>
-  <div class="contact-item"><div class="contact-icon">⌖</div>${d.info.location}</div>`;
+  <div class="contact-item">
+    <div class="contact-icon">@</div>
+    <a href="mailto:${d.info.email}">
+      ${d.info.email}
+    </a>
+  </div>
+
+  <div class="contact-item">
+    <div class="contact-icon">#</div>
+    ${d.info.phone}
+  </div>
+
+  <div class="contact-item">
+    <div class="contact-icon">in</div>
+    <a href="${d.info.linkedin_url}" target="_blank">
+      ${d.info.linkedin_label}
+    </a>
+  </div>
+
+  <div class="contact-item">
+    <div class="contact-icon">GH</div>
+    <a href="${d.info.github_url}" target="_blank">
+      ${d.info.github_label}
+    </a>
+  </div>
+
+  <div class="contact-item">
+    <div class="contact-icon">⌖</div>
+    ${d.info.location}
+  </div>
+`;
 
 /* CTA BUTTONS */
 const ctaHTML = `
@@ -425,35 +463,125 @@ document.getElementById('hero').innerHTML = `
 
 /* PROJECTS */
 const projectsHTML = d.projects.map(p => {
-  const tagsHTML = p.tags.map(t => `<span class="project-tag ${t.style}">${t.label}</span>`).join('');
+
+  const tagsHTML = p.tags.map(t =>
+    `<span class="project-tag ${t.style}">${t.label}</span>`
+  ).join('');
+
   return `
     <div class="project-card">
+
       <div>
         <div class="project-num">${p.num}</div>
-        <div class="project-title">${p.title}</div>
-        <div class="project-desc">${p.desc}</div>
-        <div class="project-tags">${tagsHTML}</div>
-      </div>
-      <div class="project-arrow">↗</div>
-    </div>`;
-}).join('');
-document.getElementById('projects-sec').innerHTML = `
-  <div class="section-header"><span class="section-num">01</span><h2 class="section-title">Projects</h2></div>
-  <div class="projects-list">${projectsHTML}</div>`;
 
+        <div class="project-title">
+          ${p.title}
+        </div>
+
+        <div class="project-desc">
+          ${p.desc}
+        </div>
+
+        <div class="project-tags">
+          ${tagsHTML}
+        </div>
+
+        <!-- PROJECT BUTTONS -->
+        <div style="
+          margin-top:18px;
+          display:flex;
+          gap:12px;
+          flex-wrap:wrap;
+        ">
+
+          ${p.github ? `
+            <a href="${p.github}"
+               target="_blank"
+               style="
+                 text-decoration:none;
+                 padding:9px 16px;
+                 border:1px solid var(--border);
+                 color:var(--ink);
+                 font-size:12px;
+                 font-family:var(--font-mono);
+                 transition:0.2s;
+               "
+               onmouseover="this.style.borderColor='var(--accent)'"
+               onmouseout="this.style.borderColor='var(--border)'"
+            >
+              GitHub ↗
+            </a>
+          ` : ''}
+
+          ${p.live ? `
+            <a href="${p.live}"
+               target="_blank"
+               style="
+                 text-decoration:none;
+                 padding:9px 16px;
+                 background:var(--accent);
+                 color:white;
+                 font-size:12px;
+                 font-family:var(--font-mono);
+                 transition:0.2s;
+               "
+               onmouseover="this.style.opacity='0.85'"
+               onmouseout="this.style.opacity='1'"
+            >
+              Live Demo ↗
+            </a>
+          ` : ''}
+
+        </div>
+      </div>
+
+      <div class="project-arrow">↗</div>
+    </div>
+  `;
+}).join('');
+
+document.getElementById('projects-sec').innerHTML = `
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <h2 class="section-title">Projects</h2>
+  </div>
+
+  <div class="projects-list">
+    ${projectsHTML}
+  </div>
+`;
 /* SKILLS */
 const skillsHTML = d.skills.map(g => {
-  const tagsHTML = g.tags.map(t => `<span class="skill-tag${t.highlight ? ' highlight' : ''}">${t.label}</span>`).join('');
+
+  const tagsHTML = g.tags.map(t =>
+    `<span class="skill-tag${t.highlight ? ' highlight' : ''}">
+      ${t.label}
+    </span>`
+  ).join('');
+
   return `
     <div class="skill-group">
-      <div class="skill-group-label">${g.group}</div>
-      <div class="skill-tags">${tagsHTML}</div>
-    </div>`;
-}).join('');
-document.getElementById('skills-sec').innerHTML = `
-  <div class="section-header"><span class="section-num">02</span><h2 class="section-title">Skills</h2></div>
-  <div class="skills-grid">${skillsHTML}</div>`;
+      <div class="skill-group-label">
+        ${g.group}
+      </div>
 
+      <div class="skill-tags">
+        ${tagsHTML}
+      </div>
+    </div>
+  `;
+}).join('');
+
+document.getElementById('skills-sec').innerHTML = `
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Skills</h2>
+  </div>
+
+  <div class="skills-grid">
+    ${skillsHTML}
+  </div>
+`;
 /* EXPERIENCE */
 const expHTML = d.experience.map(e => {
   const bulletsHTML = e.bullets.map(b => `<li>${b}</li>`).join('');
